@@ -5,7 +5,7 @@ from Rock_Paper_Scissors.Paper import Paper
 from Rock_Paper_Scissors.Scissors import Scissors
 
 # Setup variables for future computation.
-filepath = "Resources\\Sample_Input.txt"
+filepath = "Resources\\Rock_Paper_Scissors_Tournament.txt"
 points = 0
 
 # Check that file exists, if not exit with error message.
