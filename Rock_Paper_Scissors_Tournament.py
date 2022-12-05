@@ -1,8 +1,12 @@
 import os.path
 import sys
+from Rock_Paper_Scissors.Rock import Rock
+from Rock_Paper_Scissors.Paper import Paper
+from Rock_Paper_Scissors.Scissors import Scissors
 
 # Setup variables for future computation.
 filepath = "Resources\\Sample_Input.txt"
+points = 0
 
 # Check that file exists, if not exit with error message.
 if not os.path.isfile(filepath):
@@ -14,6 +18,14 @@ lines = file.readlines()
 
 # Test file input
 for line in lines:
-    print(line)
+    players = line.strip().split(' ')
+    if players[1] == 'X':
+        points += Rock(players[0]).resolve_round()
+    if players[1] == 'Y':
+        points += Paper(players[0]).resolve_round()
+    if players[1] == 'Z':
+        points += Scissors(players[0]).resolve_round()
 
 file.close()
+
+print(f'Total Score at end of tournament: {points}')
