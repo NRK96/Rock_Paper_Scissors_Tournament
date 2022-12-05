@@ -16,16 +16,20 @@ if not os.path.isfile(filepath):
 file = open(filepath, "r")
 lines = file.readlines()
 
-# Test file input
+# Go line by line and resolve each round.
 for line in lines:
     players = line.strip().split(' ')
     if players[1] == 'X':
+        # Part 1, you play rock.
         points_part_1 += Rock(players[0]).resolve_round()
     if players[1] == 'Y':
+        # part 1, you play paper.
         points_part_1 += Paper(players[0]).resolve_round()
     if players[1] == 'Z':
+        # part 1, you play scissors.
         points_part_1 += Scissors(players[0]).resolve_round()
 
 file.close()
 
+# Print out solution.
 print(f'Total Score at end of tournament: {points_part_1}')
