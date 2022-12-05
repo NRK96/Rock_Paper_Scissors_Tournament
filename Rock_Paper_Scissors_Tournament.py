@@ -6,7 +6,7 @@ from Rock_Paper_Scissors.Scissors import Scissors
 
 # Setup variables for future computation.
 filepath = "Resources\\Rock_Paper_Scissors_Tournament.txt"
-points = 0
+points_part_1 = 0
 
 # Check that file exists, if not exit with error message.
 if not os.path.isfile(filepath):
@@ -20,12 +20,12 @@ lines = file.readlines()
 for line in lines:
     players = line.strip().split(' ')
     if players[1] == 'X':
-        points += Rock(players[0]).resolve_round()
+        points_part_1 += Rock(players[0]).resolve_round()
     if players[1] == 'Y':
-        points += Paper(players[0]).resolve_round()
+        points_part_1 += Paper(players[0]).resolve_round()
     if players[1] == 'Z':
-        points += Scissors(players[0]).resolve_round()
+        points_part_1 += Scissors(players[0]).resolve_round()
 
 file.close()
 
-print(f'Total Score at end of tournament: {points}')
+print(f'Total Score at end of tournament: {points_part_1}')
